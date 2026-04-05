@@ -1,0 +1,136 @@
+:root {
+    --sand: #e8d8b2;
+    --clay: #b47c5e;
+    --cream: #fefae0;
+    --dark-bg: #2f2e2a;
+    --dark-text: #f0e6d0;
+}
+
+body {
+    background-color: var(--cream);
+    color: #3e3a35;
+    font-family: 'Poppins', sans-serif;
+    font-size: 16px;
+    transition: background 0.3s, color 0.3s;
+}
+
+/* dark mode class add by common js  */
+
+.dark-mode {
+    background-color: var(--dark-bg);
+    color: var(--dark-text);
+}
+
+
+.dark-mode .card,
+.dark-mode .navbar,
+.dark-mode .footer {
+    background-color: #3d3a35;
+    color: var(--dark-text);
+}
+
+/* navbar */
+
+.navbar {
+    padding: 8px 0;
+    background-color: var(--sand);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.navbar-brand {
+    font-weight: 700;
+    font-size: 24px;
+}
+
+.nav-link {
+    font-size: 15px;
+    padding: 8px 16px !important;
+}
+
+
+/* butoon */
+
+.btn-primary {
+    font-size: 16px;
+    padding: 10px 24px;
+    background-color: var(--clay);
+    border-color: var(--clay);
+    border-radius: 30px;
+}
+
+.btn-primary:hover {
+    background-color: #9a5a3a;
+}
+
+/* hero */
+.hero {
+    background-image: 
+        linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+        url('https://images.unsplash.com/photo-1504674900247-0877df9cc836?w=1600');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 60vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    text-align: center;
+}
+
+.hero h1{
+    font-size: 48px;
+    font-weight: 700;
+    margin-bottom: 16px;
+}
+
+/* cards popular dishes \ testimonials */
+.card{
+    border: none;
+    border-radius: 20px;
+    background-color: white;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s;
+}
+
+.card:hover{
+    transform: translateY(-5px);
+}
+
+.card-body{
+    padding: 20px;
+}
+
+.card-title{
+    font-size: 18px;
+    font-weight: 700;
+}
+
+.card-text{
+    font-size: 14px;
+}
+
+.badge{
+    padding: 4px 10px;
+    font-size: 12px;
+    border-radius: 50px;
+}
+
+.card-img-top{
+    border-radius: 20px 20px 0 0;
+}
+
+/* footer */
+.footer{
+font-size: 14px;
+margin-top: 48px;
+padding: 32px 0 24px;
+background-color: var(--sand);
+}
+
+/* responsive */
+@media (max-width:768px){
+    .hero h1{
+        font-size: 32px;
+    }
+}
