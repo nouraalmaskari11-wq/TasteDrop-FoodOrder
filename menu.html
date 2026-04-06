@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="assets/fork.png">
+    <title>TasteDrop - Our Menu</title>
+
+    <!-- Bootstrap css file -->
+    <link rel="stylesheet" href="./css/bootstrap.min.css">
+
+    <!-- font awesome css file -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+    <!-- google fonts  -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+    <!-- css style sheet -->
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+
+<body>
+    <!--  ===========navbar (sticky+cart badge+dark mode)============ -->
+    <nav class="navbar navbar-expand-lg sticky-top">
+        <div class="container">
+            <a class="navbar-brand fw-bold" href="index.html"> <img src="./assets/fork.png" alt="logo" width="32"
+                    height="32" style="margin-right: 10px;"><span class="brand-text">TasteDrop</span></a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="menu.html">Menu</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Contact</a>
+                    </li>
+                </ul>
+                <div class="ms-3 position-relative">
+                    <a href="cart.html" class="cart-icon-link"><i class="fas fa-shopping-cart fa-lg"></i>
+                        <span id="cartCount" class="cart-badge">0</span></a>
+                </div>
+
+                <!-- dark-mode -->
+                <button id="darkModeToggle" class="dark-mode-btn"><i class="fas fa-moon"></i></button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- ================menu content============================ -->
+
+    <div class="container my-5">
+        <h2 class="section-title">Our Menu</h2>
+
+        <!-- category filter buttons will be inserted by js  -->
+        <div class="d-flex flex-wrap justify-content-center gap-2 mb-5" id="categoryTabs"></div>
+
+        <!-- menu items grid will be filled by js -->
+         <div class="row g-4" id="menuItemsContainer"></div>
+    </div>
+    <!-- ==================footer================== -->
+    <footer class="footer">
+        <div class="container text-center">
+            <p><i class="fas fa-map-marker-alt"></i> 17 Qurum Boulevard, Muscat, Oman | <i class="fas fa-phone-alt"></i>
+                +968 2499 5500</p>
+            <p><i class="far fa-clock"></i> Daily 11:00 AM - 11:00 PM</p>
+            <p><i class="fab fa-instagram"></i> <i class="fab fa-twitter"></i> <i class="fab fa-facebook"></i></p>
+            <p>&copy; 2025 TasteDrop kitchen</p>
+        </div>
+    </footer>
+
+
+    <!-- bootstrap js file -->
+    <script src="./js/bootstrap.bundle.min.js"></script>
+
+
+    <!-- common js file  -->
+    <script src="js/common.js"></script>
+
+    <!--  menu js file -->
+    <script src="js/menu.js"></script>
+</body>
+
+</html>

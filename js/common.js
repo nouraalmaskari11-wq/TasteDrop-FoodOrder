@@ -8,7 +8,7 @@ function getCart(){
 
 
 // save cart to local storage and update the badge
-function saveCart(){
+function saveCart(cart){
     localStorage.setItem('cart', JSON.stringify(cart));
     updateCartBadge();
 }
@@ -19,7 +19,11 @@ function updateCartBadge(){
     const cart= getCart();
     const totalItems= cart.reduce((sum,item)=> sum+ item.quantity,0);
     const badge=document.getElementById('cartCount');
-    if (badge) badge.innerText= totalItems;
+    if (badge){ badge.innerText= totalItems;
+    // add bump animation
+    badge.classList.add('bump');
+    setTimeout(()=> badge.classList.remove('bump'),300);
+}
 }
 
 
@@ -32,6 +36,12 @@ function addToCart(id, name, price, quantity){
     }else {
         cart.push({id, name, price, quantity});
     }
+    saveCart(cart);
+}
+
+function removeFromCart(id){
+    let cart= getCart();
+    cart= cart.filter(item=> item.id !==id);
     saveCart(cart);
 }
 
