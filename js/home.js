@@ -40,7 +40,6 @@ document.addEventListener('DOMContentLoaded', async()=> {
         // use the addtocart function from common.js ..quantity=1
 
     addToCart(id, name, price, 1);
-    alert(`${name} added to cart!`);
         });
     });
     } catch (error){
