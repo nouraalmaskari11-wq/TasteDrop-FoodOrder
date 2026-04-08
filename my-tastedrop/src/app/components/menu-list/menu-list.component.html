@@ -1,0 +1,28 @@
+<div class="row mb-4">
+    <div class="col-md-8">
+        <div class="btn-group flex-wrap gap-2 mb-2">
+            <button *ngFor="let cat of categories" class="btn btn-outline-primary"
+                [class.active]="selectedCategory === cat" (click)="selectedCategory = cat; applyFilters()">{{cat}}
+            </button>
+        </div>
+    </div>
+
+    <div class="col-md-4">
+        <div class="d-flex gap-2">
+            <input type="text" class="form-control" placeholder="Search..." [(ngModel)]="searchTerm"
+                (input)="applyFilters()">
+            <select class="form-select" [(ngModel)]="sortBy" (change)="applyFilters()">
+                <option value="default">Sort By</option>
+                <option value="low">Price: Low to High</option>
+                <option value="high">Price: High to Low</option>
+            </select>
+        </div>
+    </div>
+</div>
+
+<div class="row g-4">
+    <app-menu-item *ngFor="let item of filteredItems"
+    [item]="item"
+    (addToCart)="onAddToCart($event)">
+    </app-menu-item>
+</div>

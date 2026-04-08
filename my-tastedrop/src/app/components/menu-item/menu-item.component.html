@@ -1,0 +1,40 @@
+<div class="col-md-4 col-lg-3 mb-4">
+    <div class="card h-100">
+        <img [src]="item.image" class="card-img-top" alt="{{item.name}}" style="height: 180px; object-fit: cover;">
+        <div class="card-body">
+            <h5 class="card-title">{{item.name}}</h5>
+
+            <!-- category badge with ngswitch -->
+            <span [ngSwitch]="item.category" class="badge mb-2">
+                <span *ngSwitchCase="'Starters'" class="bg-success">Starters</span>
+                <span *ngSwitchCase="'Main Course'" class="bg-warning">Main Course</span>
+                <span *ngSwitchCase="'Pizza'" class="bg-danger">Pizza</span>
+                <span *ngSwitchCase="'Burgers'" class="bg-primary">Burgers</span>
+                <span *ngSwitchCase="'Desserts'" class="bg-info">Desserts</span>
+                <span *ngSwitchCase="'Drinks'" class="bg-secondary">Drinks</span>
+                <span *ngSwitchDefault class="bg-secondary">{{item.category}}</span>
+            </span>
+
+            <p class="card-text small">{{item.description.substring(0, 80)}}...</p>
+            <p class="fw-bold">{{item.price}} OMR</p>
+
+            <div *ngIf="item.available" class="d-flex justify-content-between align-items-center mb-2">
+                <div class="btn-group">
+                    <button class="btn btn-sm btn-outline-secondary" (click)="decreaseQty()">-</button>
+                    <span class="btn btn-sm disabled">{{quantity}}</span>
+                    <button class="btn btn-sm btn-outline-secondary" (click)="increaseQty()">+</button>
+                </div>
+            </div>
+
+
+            <!-- add to cart button -->
+            <button class="btn btn-primary w-100" [disabled]="!item.available"
+                (click)="addToCart.emit(item); quantity =1">{{item.available ? 'Add to Cart' : 'Out of Stock'}}</button>
+        </div>
+
+        <!-- out of stock overlay -->
+        <div *ngIf="!item.available"
+            class="position-absolute top-0 start-0 w-100 h-100 bg-dark bg-opacity-75 d-flex align-items-center justify-content-center text-white fw-bold"
+            style="border-radius:20px;">Out of Stock</div>
+    </div>
+</div>

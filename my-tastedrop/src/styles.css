@@ -1,0 +1,119 @@
+:root{
+    --sand: #e8d8b2;
+    --clay: #b47c5e;
+    --cream: #fefae0;
+    --dark-bg: #2f2e2a;
+    --dark-text: #f0e6d0;
+}
+
+body{
+    color: #3e3a35;
+    background-color: var(--cream);
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    transition: background 0.3s, color 0.3s;
+}
+
+.dark-mode{
+    background-color: var(--dark-bg);
+    color: var(--dark-text);
+}
+
+.dark-mode .card,
+.dark-mode .navbar{
+    background-color: #3d3a35;
+    color: var(--dark-text);
+}
+
+.navbar {
+    padding: 8px 0;
+background-color: var(--sand);
+box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.navbar-brand{
+    font-weight: 700;
+    font-size: 24px;
+}
+
+.nav-link{
+    font-weight: 600;
+    transition: all 0.3s;
+}
+
+.nav-link:hover,
+.nav-link.active{
+    border-radius: 30px;
+    color: var(--clay) !important;
+    background-color: rgba(180, 124, 94, 0.15);
+}
+
+.cart-badge{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 20px;
+    border-radius: 50%;
+    width: 20px;
+    font-size: 11px;
+    font-weight: bold;
+    position: absolute;
+    top: -8px;
+    right: -12px;
+    color: white;
+    background-color: var(--clay);
+}
+
+.dark-mode-btn{
+    cursor: pointer;
+    height: 40px;
+    width: 40px;
+    border: 2px solid var(--clay);
+    border-radius: 50%;
+    background: none;
+    color: var(--clay);
+    transition: all 0.3s;
+}
+
+.dark-mode-btn:hover{
+    color: white;
+    background: var(--clay);
+    transform: rotate(15deg);
+}
+
+.card{
+    background-color: white;
+    border: none;
+    border-radius: 20px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s;
+}
+
+.card:hover{
+    transform: translateY(-5px);
+}
+
+.btn-primary{
+    padding: 10px 24px;
+    border-radius: 30px;
+    border-color: var(--clay);
+    background-color: var(--clay);
+}
+
+.btn-primary:hover{
+    background-color: #9a5a3a;
+}
+
+.btn-outline-primary{
+    color: var(--clay);
+    border-color: var(--clay);
+}
+
+.btn-outline-primary:hover,
+.btn-outline-primary.active{
+    color: white;
+    background-color: var(--clay);
+    border-color: var(--clay);
+}
+
