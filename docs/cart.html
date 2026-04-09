@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="assets/fork.png">
+    <title>TasteDrop - Your Cart</title>
+
+    <!-- Bootstrap css file -->
+    <link rel="stylesheet" href="./css/bootstrap.min.css">
+
+    <!-- font awesome css file -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+    <!-- google fonts  -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+    <!-- css style sheet -->
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+
+<body>
+    <!--  ===========navbar (sticky+cart badge+dark mode)============ -->
+    <nav class="navbar navbar-expand-lg sticky-top">
+        <div class="container">
+            <a class="navbar-brand fw-bold" href="index.html"> <img src="./assets/fork.png" alt="logo" width="32"
+                    height="32" style="margin-right: 10px;"><span class="brand-text">TasteDrop</span></a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="menu.html">Menu</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="about.html">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="contact.html">Contact</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="d-flex align-items-center gap-2 ms-2">
+                <div class="position-relative">
+                    <a href="cart.html" class="cart-icon-link"><i class="fas fa-shopping-cart fa-lg"></i>
+                        <span id="cartCount" class="cart-badge">0</span></a>
+                </div>
+
+                <!-- dark-mode -->
+                <button id="darkModeToggle" class="dark-mode-btn"><i class="fas fa-moon"></i></button>
+
+            </div>
+        </div>
+    </nav>
+
+    <!-- cart content -->
+    <div class="container my-5">
+        <h2 class="section-title">Your Cart</h2>
+
+        <!-- cart table and summary row-->
+        <div class="row g-4" id="cartContent">
+            <div class="col-lg-8">
+                <div class="table-responsive">
+                    <table class="table table-bordered align-middle cart-table">
+                        <thead>
+                            <tr>
+                                <th>Item</th>
+                                <th>Price</th>
+                                <th>Quantity</th>
+                                <th>Subtotal</th>
+                                <th></th>
+                            </tr>
+                        </thead>
+                        <tbody id="cartTableBody">
+                            <tr>
+                                <td colspan="5" class="text-center">Your cart is empty.<a href="menu.html">Go to
+                                        Menu</a></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <div class="col-lg-4">
+                <div class="summary-card" id="orderSummary" style="display: none;">
+                    <h4><i class="fas fa-receipt"></i> Order Summary</h4>
+                    <hr>
+                    <div class="summary-row">
+                        <span>Subtotal</span>
+                        <span id="subtotal">0.000</span> OMR
+                    </div>
+                    <div class="summary-row">
+                        <span>Delivery Fee</span>
+                        <span id="deliveryFee">1.500</span> OMR
+                    </div>
+                    <div class="summary-row total">
+                        <span>Total</span>
+                        <span id="total">0.000</span> OMR
+                    </div>
+                </div>
+
+                <!-- promo code  -->
+                <div class="promo-section mt-4" id="promoSection" style="display: none;">
+                    <div class="input-group">
+                        <input type="text" id="promoInput" class="form-control" placeholder="Enter promo code">
+                        <button class="btn btn-outline-primary" id="applyPromoBtn">Apply</button>
+                    </div>
+                    <div id="promoMsg" class="small mt-2" style="display: none;"></div>
+                </div>
+
+                <!-- checkout form -->
+                <div class="checkout-form mt-4" id="checkoutForm" style="display: none;">
+                    <h4><i class="fas fa-credit-card"></i> Checkout</h4>
+                    <form id="checkoutFormEl" novalidate>
+                        <div class="mb-3">
+                            <label class="form-label">Full Name</label>
+                            <input type="text" class="form-control" id="custName" required>
+                            <div class="invalid-feedback">Name is required</div>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Delivery Address</label>
+                            <input type="text" class="form-control" id="custAddress" required>
+                            <div class="invalid-feedback">Address is required</div>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Phone Number</label>
+                            <input type="tel" class="form-control" id="custPhone" required>
+                            <div class="invalid-feedback">Phone must contain digits only</div>
+                        </div>
+
+                        <div class="mb-3">
+                            <label class="form-label">Payment Method</label>
+                            <div class="form-check">
+                                <input type="radio" class="form-check-input" name="paymentMethod" value="cash"
+                                    id="payCash" checked>
+                                <label class="form-check-label">Cash on Delivery</label>
+                            </div>
+                            <div class="form-check">
+                                <input type="radio" class="form-check-input" name="paymentMethod" value="card"
+                                    id="payCard">
+                                <label class="form-check-label">Card</label>
+                            </div>
+                        </div>
+                        <div class="mb-3" id="cardNumberDiv" style="display: none;">
+                            <label class="form-label">Card Number</label>
+                            <input type="text" class="form-control" id="cardNumber" maxlength="19"
+                                placeholder="16-digit card number">
+                            <div class="invalid-feedback">Card number must be exactly 16 digits</div>
+                        </div>
+                        <button type="submit" class="btn btn-primary w-100">Place Order</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+        <!-- Order conformation -->
+        <div id="orderConfirmation" class="order-confirm mt-4" style="display: none;">
+            <div class="confirm-icon"><i class="fas fa-check-circle"></i></div>
+            <h3>Order Confirmed!</h3>
+            <div id="confirmDetails"></div>
+            <button class="btn btn-primary mt-3" onclick="location.reload()">Continue Shopping</button>
+        </div>
+
+        <div id="emptyCartMessage" class="text-center py-5" style="display: none;">
+            <i class="fas fa-shopping-cart fa-3x mb-3"></i>
+            <h3>Your cart is empty</h3>
+            <p>Looks like you haven't added any thing yet.</p>
+            <a href="menu.html" class="btn btn-primary">Browse Menu</a>
+        </div>
+    </div>
+
+    <!-- ==================footer================== -->
+    <footer class="footer">
+        <div class="container text-center">
+            <p><i class="fas fa-map-marker-alt"></i> 17 Qurum Boulevard, Muscat, Oman | <i class="fas fa-phone-alt"></i>
+                +968 2499 5500</p>
+            <p><i class="far fa-clock"></i> Daily 11:00 AM - 11:00 PM</p>
+            <p><i class="fab fa-instagram"></i> <i class="fab fa-twitter"></i> <i class="fab fa-facebook"></i></p>
+            <p>&copy; 2025 TasteDrop kitchen</p>
+        </div>
+    </footer>
+
+
+    <!-- bootstrap js file -->
+    <script src="./js/bootstrap.bundle.min.js"></script>
+
+    <!-- common js file  -->
+    <script src="js/common.js"></script>
+
+    <!-- home js file -->
+    <script src="js/cart.js"></script>
+</body>
+
+</html>

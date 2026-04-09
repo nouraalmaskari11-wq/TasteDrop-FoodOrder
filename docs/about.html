@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="assets/fork.png">
+    <title>About TasteDrop - TasteDrop Kitchen</title>
+    <link rel="stylesheet" href="./css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg sticky-top">
+        <div class="container">
+            <a class="navbar-brand fw-bold" href="index.html"> <img src="./assets/fork.png" alt="logo" width="32" height="32" style="margin-right: 10px;"><span class="brand-text">TasteDrop</span></a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="menu.html">Menu</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="about.html">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="contact.html">Contact</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="d-flex align-items-center gap-2 ms-2">
+                <div class="position-relative">
+                    <a href="cart.html" class="cart-icon-link"><i class="fas fa-shopping-cart fa-lg"></i>
+                        <span id="cartCount" class="cart-badge">0</span></a>
+                </div>
+                <button id="darkModeToggle" class="dark-mode-btn"><i class="fas fa-moon"></i></button>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container my-5">
+        <h2 class="section-title text-center mb-5">About TasteDrop Kitchen</h2>
+        <div class="row g-5">
+            <div class="col-lg-6">
+                <img src="https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?w=600&h=400&fit=crop" alt="Kitchen" class="img-fluid rounded">
+            </div>
+            <div class="col-lg-6">
+                <h3>Our Story</h3>
+                <p>TasteDrop Kitchen was founded in 2020 in Muscat, Oman, with a simple mission: bring fresh, delicious food to your door using only the finest ingredients.</p>
+                <p>From our family recipes to our modern kitchen, every dish is crafted with love and care.</p>
+                <div class="row mt-4">
+                    <div class="col-6">
+                        <div class="text-center p-3 bg-light rounded">
+                            <h4>500+</h4>
+                            <p>Happy Customers</p>
+                        </div>
+                    </div>
+                    <div class="col-6">
+                        <div class="text-center p-3 bg-light rounded">
+                            <h4>50+</h4>
+                            <p>Menu Items</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row my-5">
+            <div class="col-md-4 text-center mb-4">
+                <i class="fas fa-leaf fa-3x text-success mb-3"></i>
+                <h4>Fresh Ingredients</h4>
+                <p>We source only the freshest ingredients daily from local markets.</p>
+            </div>
+            <div class="col-md-4 text-center mb-4">
+                <i class="fas fa-users fa-3x text-primary mb-3"></i>
+                <h4>Expert Chefs</h4>
+                <p>Our team of passionate chefs brings years of experience to every dish.</p>
+            </div>
+            <div class="col-md-4 text-center mb-4">
+                <i class="fas fa-shipping-fast fa-3x text-warning mb-3"></i>
+                <h4>Fast Delivery</h4>
+                <p>Hot food delivered to your door in under 35 minutes.</p>
+            </div>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <div class="container text-center">
+            <p><i class="fas fa-map-marker-alt"></i> 17 Qurum Boulevard, Muscat, Oman | <i class="fas fa-phone-alt"></i> +968 2499 5500</p>
+            <p><i class="far fa-clock"></i> Daily 11:00 AM - 11:00 PM</p>
+            <p><i class="fab fa-instagram"></i> <i class="fab fa-twitter"></i> <i class="fab fa-facebook"></i></p>
+            <p>&copy; 2025 TasteDrop kitchen</p>
+        </div>
+    </footer>
+
+    <script src="./js/bootstrap.bundle.min.js"></script>
+    <script src="js/common.js"></script>
+</body>
+</html>
+
