@@ -75,7 +75,7 @@ TasteDrop/
 
 ## Technologies
 - Bootstrap 5.0.2
-- Font Awesome 6
+- Font Awesome 
 - Google Fonts (Poppins)
 - LocalStorage API
 
