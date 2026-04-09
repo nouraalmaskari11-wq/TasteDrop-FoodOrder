@@ -73,4 +73,12 @@ TasteDrop/
    ng serve
    Open http://localhost:4200/menu
 
-   
+## Technologies
+- Bootstrap 5.0.2
+- Font Awesome 6
+- Google Fonts (Poppins)
+- LocalStorage API
+
+---
+
+**Project completed as part of a frontend training assignment.**

@@ -233,7 +233,7 @@ function placeOrder() {
         document.getElementById('orderConfirmation').style.display = 'none';
         document.getElementById('cartContent').style.display = 'flex';
         renderCart();  // Shows empty state
-    }, 1000);
+    }, 8000);
 }
 
 // Attach cart events (+ / - / remove)
