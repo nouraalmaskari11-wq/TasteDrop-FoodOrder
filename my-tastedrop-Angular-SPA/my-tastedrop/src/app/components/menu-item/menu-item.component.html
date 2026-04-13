@@ -29,7 +29,7 @@
 
             <!-- add to cart button -->
             <button class="btn btn-primary w-100" [disabled]="!item.available"
-                (click)="addToCart.emit(item); quantity =1">{{item.available ? 'Add to Cart' : 'Out of Stock'}}</button>
+                (click)="addToCart.emit({item, quantity}); quantity =1">{{item.available ? 'Add to Cart' : 'Out of Stock'}}</button>
         </div>
 
         <!-- out of stock overlay -->

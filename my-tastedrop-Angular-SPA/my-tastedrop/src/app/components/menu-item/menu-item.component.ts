@@ -8,7 +8,7 @@ import { MenuItem } from 'src/app/models/menu-item';
 })
 export class MenuItemComponent {
   @Input() item!: MenuItem;
-  @Output() addToCart = new EventEmitter<MenuItem>();
+  @Output() addToCart = new EventEmitter<{item: MenuItem, quantity: number}>();
   quantity = 1;
 
   increaseQty(): void{

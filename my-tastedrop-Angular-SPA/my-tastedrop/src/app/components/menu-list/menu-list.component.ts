@@ -53,7 +53,7 @@ export class MenuListComponent implements OnInit{
   this.filteredItems =items;
  }
 
- onAddToCart(item: MenuItem): void{
-  this.cartService.addItem(item, 1);
+ onAddToCart(event:{item: MenuItem, quantity:number}): void{
+  this.cartService.addItem(event.item,event.quantity);
  }
 }

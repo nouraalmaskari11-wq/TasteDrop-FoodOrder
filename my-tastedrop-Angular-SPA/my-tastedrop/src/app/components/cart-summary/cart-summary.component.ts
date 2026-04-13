@@ -7,13 +7,14 @@ import { CartService } from 'src/app/services/cart.service';
   styleUrls: ['./cart-summary.component.css']
 })
 export class CartSummaryComponent {
-constructor(public cartService: CartService){}
+  constructor(public cartService: CartService) { }
 
-updateQuantity(id: number, delta: number): void{
-  const items = this.cartService.getItems();
-  const item = items.find(i => i.id === id);
-  if (item){
-    this.cartService.updateQuantity(id, item.quantity + delta)
+  updateQuantity(id: number, delta: number): void {
+    const items = this.cartService.getItems();
+    const item = items.find(i => i.id === id);
+    if (item) {
+      const newQuantity = item.quantity + delta;
+      this.cartService.updateQuantity(id, newQuantity);
+    }
   }
-}
 }
